@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuary.github.io/blog/</id>
     <title>冰河相依</title>
-    <updated>2020-11-10T07:45:14.929Z</updated>
+    <updated>2020-11-10T08:59:47.702Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuary.github.io/blog/"/>
     <link rel="self" href="https://liuary.github.io/blog/atom.xml"/>
@@ -10,6 +10,90 @@
     <logo>https://liuary.github.io/blog/images/avatar.png</logo>
     <icon>https://liuary.github.io/blog/favicon.ico</icon>
     <rights>All rights reserved 2020, 冰河相依</rights>
+    <entry>
+        <title type="html"><![CDATA[ C++数组引用传参]]></title>
+        <id>https://liuary.github.io/blog/post/cshu-zu-yin-yong-chuan-can/</id>
+        <link href="https://liuary.github.io/blog/post/cshu-zu-yin-yong-chuan-can/">
+        </link>
+        <updated>2020-11-10T08:55:51.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>使用数组的引用作为参数传递给函数，让原始数组不输入长度也能被函数输出</p>
+</blockquote>
+<p>实际上是使用模板自动推测传入引用的数据类型和长度。</p>
+<h2 id="第一版">第一版</h2>
+<blockquote>
+<p>这一版是相对比较原始的，要指定对应的数组类型。原文链接<a href="https://blog.csdn.net/u014304293/article/details/22867715?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase">C++数组引用传参</a></p>
+</blockquote>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;size_t array_size&gt;
+void print(int (&amp;a)[array_size])
+{
+    for (auto i : a)
+    {
+        cout &lt;&lt; i &lt;&lt; ends;
+    }
+    cout &lt;&lt; endl;
+}
+
+int main()
+{
+    
+    int a[]{ 1, 2, 3, 4, 5 };
+
+    print(a);
+
+}
+</code></pre>
+<h2 id="第二版">第二版</h2>
+<blockquote>
+<p>这一版用模板指定数组的类型，因此可以处理任意类型的数组</p>
+</blockquote>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;size_t array_size, template T&gt;
+void print(T (&amp;a)[array_size])
+{
+    for (auto i : a)
+    {
+        cout &lt;&lt; i &lt;&lt; ends;
+    }
+    cout &lt;&lt; endl;
+}
+
+int main()
+{
+    
+    double a[]{ 1, 2, 3.14, 4, 5 };
+
+    print(a);
+
+}
+</code></pre>
+<h2 id="第三版">第三版</h2>
+<blockquote>
+<p>这一版直接用模板代替了数组长度推测的部分，代码上最为简单</p>
+</blockquote>
+<pre><code class="language-C++">template&lt;typename T&gt;
+void print(T &amp;a)
+{
+    for (auto i : a)
+    {
+        cout &lt;&lt; i &lt;&lt; ends;
+    }
+    cout &lt;&lt; endl;
+}
+</code></pre>
+<hr>
+<p>这涉及到C++模板的一些特性：类型模板参数、无类型模板参数和模板模板参数<br>
+<a href="https://www.cnblogs.com/dongzhiquan/p/7726405.html">参考链接</a></p>
+<hr>
+<p align="right" ><font size=1>春水碧于天，画船听雨眠。</font></p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[一首小诗]]></title>
         <id>https://liuary.github.io/blog/post/yi-shou-xiao-shi/</id>

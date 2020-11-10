@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>一首小诗 | 冰河相依</title>
+<title> C++数组引用传参 | 冰河相依</title>
 
 <link rel="shortcut icon" href="https://liuary.github.io/blog//favicon.ico?v=1604998784317">
 
@@ -89,52 +89,100 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    一首小诗
+                     C++数组引用传参
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
                         · 2020-11-10 ·
                     </time>
                     
-                        <a href="https://liuary.github.io/blog/tag/Label_Poetry/" class="post-tags">
-                            # 诗歌
+                        <a href="https://liuary.github.io/blog/tag/Label_Programming/" class="post-tags">
+                            # 编程
+                        </a>
+                    
+                        <a href="https://liuary.github.io/blog/tag/Label_Cpp/" class="post-tags">
+                            # C++
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <p>前两天无意间在自己的上锁的QQ日志里翻出来一篇2019年6月6日写的小诗。</p>
-<p>这首诗算不上精巧，处处又透露着简单。</p>
-<p>然而我瞬间能够想到一年前那难言的眷恋情绪。</p>
-<p>在我想来，文字可太有用了——毕竟人们并不能让他人看到自己的内心，只能描摹形神，表露心迹。当初收到这一首诗的人心情如何我不得而知，但这几十行却写尽了我当时最热烈的情绪。</p>
-<p>很多事情不会有结果，也不必有结果。若有遗憾，至少美梦犹在。</p>
-<blockquote>
-<p>我想给你写诗；</p>
-<p>我想写诗经里的诗；</p>
-<p>我也想写绝句律诗；</p>
-<p>我还想写现代的诗；</p>
-<p>总之我想给你写诗。</p>
-<p>看见路边的树，</p>
-<p>我想把树写成诗，</p>
-<p>送给你；</p>
-<p>看见从天而降的雨，</p>
-<p>我想把雨写成诗，</p>
-<p>也送给你。</p>
-<p>我想把我的欢喜写成诗，</p>
-<p>送给你；</p>
-<p>我想把我的哀愁写成诗，</p>
-<p>还送给你。</p>
-<p>我想把你写进诗里，</p>
-<p>于是我把你写进诗里。</p>
-<p>我想让你和追逐繁星的信念住在一起，</p>
-<p>我想让烦恼离你远去。</p>
-<p>我在深夜写诗，</p>
-<p>梦境与现实交织，</p>
-<p>美好和世界接壤，</p>
-<p>愿你，</p>
-<p>常在快乐的土地。</p>
+                    <blockquote>
+<p>使用数组的引用作为参数传递给函数，让原始数组不输入长度也能被函数输出</p>
 </blockquote>
+<p>实际上是使用模板自动推测传入引用的数据类型和长度。</p>
+<h2 id="第一版">第一版</h2>
+<blockquote>
+<p>这一版是相对比较原始的，要指定对应的数组类型。原文链接<a href="https://blog.csdn.net/u014304293/article/details/22867715?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase">C++数组引用传参</a></p>
+</blockquote>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;size_t array_size&gt;
+void print(int (&amp;a)[array_size])
+{
+    for (auto i : a)
+    {
+        cout &lt;&lt; i &lt;&lt; ends;
+    }
+    cout &lt;&lt; endl;
+}
+
+int main()
+{
+    
+    int a[]{ 1, 2, 3, 4, 5 };
+
+    print(a);
+
+}
+</code></pre>
+<h2 id="第二版">第二版</h2>
+<blockquote>
+<p>这一版用模板指定数组的类型，因此可以处理任意类型的数组</p>
+</blockquote>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;size_t array_size, template T&gt;
+void print(T (&amp;a)[array_size])
+{
+    for (auto i : a)
+    {
+        cout &lt;&lt; i &lt;&lt; ends;
+    }
+    cout &lt;&lt; endl;
+}
+
+int main()
+{
+    
+    double a[]{ 1, 2, 3.14, 4, 5 };
+
+    print(a);
+
+}
+</code></pre>
+<h2 id="第三版">第三版</h2>
+<blockquote>
+<p>这一版直接用模板代替了数组长度推测的部分，代码上最为简单</p>
+</blockquote>
+<pre><code class="language-C++">template&lt;typename T&gt;
+void print(T &amp;a)
+{
+    for (auto i : a)
+    {
+        cout &lt;&lt; i &lt;&lt; ends;
+    }
+    cout &lt;&lt; endl;
+}
+</code></pre>
 <hr>
-<p align="right" ><font size=1>世界上美好的东西不太多，立秋傍晚从河对岸吹来的风。</font></p>
+<p>这涉及到C++模板的一些特性：类型模板参数、无类型模板参数和模板模板参数<br>
+<a href="https://www.cnblogs.com/dongzhiquan/p/7726405.html">参考链接</a></p>
+<hr>
+<p align="right" ><font size=1>春水碧于天，画船听雨眠。</font></p>
                 </div>
             </article>
         </div>
@@ -142,8 +190,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://liuary.github.io/blog/post/ge-ren-jie-shao/" class="post-title gt-a-link">
-                    个人介绍
+                <a href="https://liuary.github.io/blog/post/yi-shou-xiao-shi/" class="post-title gt-a-link">
+                    一首小诗
                 </a>
             </div>
         
