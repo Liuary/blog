@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://liuary.github.io/blog/</id>
+    <title>冰河相依</title>
+    <updated>2020-11-10T07:25:18.573Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://liuary.github.io/blog/"/>
+    <link rel="self" href="https://liuary.github.io/blog/atom.xml"/>
+    <subtitle>醉后不知天在水，满船清梦压星河。</subtitle>
+    <logo>https://liuary.github.io/blog/images/avatar.png</logo>
+    <icon>https://liuary.github.io/blog/favicon.ico</icon>
+    <rights>All rights reserved 2020, 冰河相依</rights>
+    <entry>
+        <title type="html"><![CDATA[个人介绍]]></title>
+        <id>https://liuary.github.io/blog/post/ge-ren-jie-shao/</id>
+        <link href="https://liuary.github.io/blog/post/ge-ren-jie-shao/">
+        </link>
+        <updated>2020-11-10T07:02:20.000Z</updated>
+        <content type="html"><![CDATA[<p>99 年，男，身高 170cm ，体重 55kg 上下。<br>
+即将于某末流本科毕业，软件工程专业。<br>
+爱好知识分享、玩并写游戏；喜欢写作还有音乐；半宅，半二次元；热衷于神秘学。</p>
+<hr>
+<p align="right" ><font size=1>海水梦悠悠，君愁我亦愁。南风知我意，吹梦到西洲</font></p>
+]]></content>
+    </entry>
+</feed>
