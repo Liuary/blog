@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://liuary.github.io/blog/</id>
+    <id>https://liuary.github.io/blog/blog</id>
     <title>冰河相依</title>
-    <updated>2020-11-10T09:44:24.362Z</updated>
+    <updated>2020-11-10T09:46:58.918Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://liuary.github.io/blog/"/>
-    <link rel="self" href="https://liuary.github.io/blog/atom.xml"/>
+    <link rel="alternate" href="https://liuary.github.io/blog/blog"/>
+    <link rel="self" href="https://liuary.github.io/blog/blog/atom.xml"/>
     <subtitle>醉后不知天在水，满船清梦压星河。</subtitle>
-    <logo>https://liuary.github.io/blog/images/avatar.png</logo>
-    <icon>https://liuary.github.io/blog/favicon.ico</icon>
+    <logo>https://liuary.github.io/blog/blog/images/avatar.png</logo>
+    <icon>https://liuary.github.io/blog/blog/favicon.ico</icon>
     <rights>All rights reserved 2020, 冰河相依</rights>
     <entry>
         <title type="html"><![CDATA[ C++数组引用传参]]></title>
-        <id>https://liuary.github.io/blog/post/cshu-zu-yin-yong-chuan-can/</id>
-        <link href="https://liuary.github.io/blog/post/cshu-zu-yin-yong-chuan-can/">
+        <id>https://liuary.github.io/blog/blog/post/cshu-zu-yin-yong-chuan-can/</id>
+        <link href="https://liuary.github.io/blog/blog/post/cshu-zu-yin-yong-chuan-can/">
         </link>
         <updated>2020-11-10T08:55:51.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -96,8 +96,8 @@ void print(T &amp;a)
     </entry>
     <entry>
         <title type="html"><![CDATA[一首小诗]]></title>
-        <id>https://liuary.github.io/blog/post/yi-shou-xiao-shi/</id>
-        <link href="https://liuary.github.io/blog/post/yi-shou-xiao-shi/">
+        <id>https://liuary.github.io/blog/blog/post/yi-shou-xiao-shi/</id>
+        <link href="https://liuary.github.io/blog/blog/post/yi-shou-xiao-shi/">
         </link>
         <updated>2020-11-10T07:28:41.000Z</updated>
         <content type="html"><![CDATA[<p>前两天无意间在自己的上锁的QQ日志里翻出来一篇2019年6月6日写的小诗。</p>
@@ -136,8 +136,8 @@ void print(T &amp;a)
     </entry>
     <entry>
         <title type="html"><![CDATA[个人介绍]]></title>
-        <id>https://liuary.github.io/blog/post/ge-ren-jie-shao/</id>
-        <link href="https://liuary.github.io/blog/post/ge-ren-jie-shao/">
+        <id>https://liuary.github.io/blog/blog/post/ge-ren-jie-shao/</id>
+        <link href="https://liuary.github.io/blog/blog/post/ge-ren-jie-shao/">
         </link>
         <updated>2020-11-10T07:02:20.000Z</updated>
         <content type="html"><![CDATA[<p>99 年，男，身高 170cm ，体重 55kg 上下。<br>
